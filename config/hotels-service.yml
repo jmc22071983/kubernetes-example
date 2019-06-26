@@ -26,6 +26,26 @@ hystrix:
                   strategy: THREAD
                   thread:
                     timeoutInMilliseconds: 10000
+
+---
+
+spring:
+   profiles: k8s
+server:
+  port: 8073
+
+ribbon:
+  ConnectTimeout: 10000
+  ReadTimeout: 10000
+  
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                  strategy: THREAD
+                  thread:
+                    timeoutInMilliseconds: 10000                       
 ---
 
 spring:
