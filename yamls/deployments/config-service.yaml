@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: config
-        image: jmc22071983/config-services:0.0.2-SNAPSHOT
+        image: jmc22071983/config-services-k8s:0.0.1-SNAPSHOT
         ports:
         - containerPort: 8888
