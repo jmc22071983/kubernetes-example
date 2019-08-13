@@ -1,22 +1,19 @@
-apiVersion: apps/v1
+apiVersion: apps/v1 # Usa apps/v1beta2 para versiones anteriores a 1.9.0
 kind: Deployment
 metadata:
-  name: config
-  labels:
-    app: config
+  name: config-deployment
 spec:
   selector:
     matchLabels:
       app: config
-  strategy:
-    type: Recreate
+  replicas: 1 # indica al controlador que ejecute 2 pods
   template:
     metadata:
       labels:
-        app: config
+        app: nginx
     spec:
       containers:
-      - image: jmc22071983/config-services:0.0.2-SNAPSHOT
-        name: config
+      - name: config
+        image: jmc22071983/config-services:0.0.2-SNAPSHOT
         ports:
         - containerPort: 8888
