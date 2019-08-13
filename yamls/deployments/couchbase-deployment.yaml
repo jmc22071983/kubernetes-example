@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: couchbase
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: couchbase
+    template:
+        metadata:
+          labels:
+            app: couchbase
+        spec:
+            containers:
+              - name: couchbase
+                image: jmc22071983/my_couchbase:0.0.1-SNAPSHOT
+                ports:
+                - containerPort: 8091
+                - containerPort: 8092
+                - containerPort: 8093
+                - containerPort: 8094
+                - containerPort: 11210
+                volumeMounts:
+                - name: couchbase-vol
+                  mountPath: /opt/couchbase/var
+            volumes:
+              - name: couchbase-vol
+                persistentVolumeClaim:
+                  claimName: couchbase-claim
+        
