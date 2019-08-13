@@ -8,7 +8,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /config
+      - path: /config/**
         backend:
           serviceName: config
           servicePort: 8888

@@ -10,4 +10,4 @@ spring:
       server:
         prefix: /config
         git:
-          uri: https://github.com/jmc22071983/kubernetes-example/config
+          uri: https://github.com/jmc22071983/config
