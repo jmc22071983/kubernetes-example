@@ -3,12 +3,12 @@ kind: Ingress
 metadata:
   name: app-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   rules:
   - http:
       paths:
-      - path: /config/**
+      - path: /config/.*
         backend:
           serviceName: config
           servicePort: 8888
