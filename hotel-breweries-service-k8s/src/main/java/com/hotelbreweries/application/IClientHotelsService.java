@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-@FeignClient(name = "hotels-service")
+@FeignClient(name = "hotels-service", url="http://hotels-service:8073")
 public interface IClientHotelsService {
 	
 

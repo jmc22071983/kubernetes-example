@@ -16,7 +16,7 @@ spec:
         app: hotel-breweries-service
     spec:
       containers:
-      - image: jmc22071983/hotel-breweries-service-k8s:0.0.1-SNAPSHOT
+      - image: jmc22071983/hotel-breweries-service-k8s:0.0.2-SNAPSHOT
         imagePullPolicy: Always
         name: hotel-breweries-service
         envFrom:

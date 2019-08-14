@@ -24,4 +24,8 @@ spec:
         backend:
           serviceName: hotel-breweries-service
           servicePort: 8074
+      - path: /*
+        backend:
+          serviceName: grafana
+          servicePort: 3000
           
