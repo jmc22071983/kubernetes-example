@@ -22,3 +22,16 @@ spec:
         envFrom:
         - configMapRef:
             name: config-map
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotels-service
+spec:
+  selector:
+    app: hotels-service
+  ports:
+    - port: 8073
+      targetPort: 8073
+  type: ClusterIP

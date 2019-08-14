@@ -10,5 +10,18 @@ spec:
       paths:
       - path: /config/.*
         backend:
-          serviceName: config-service
+          serviceName: config
           servicePort: 8888
+      - path: /hotels/.*
+        backend:
+          serviceName: hotels-service
+          servicePort: 8073
+      - path: /breweries/.*
+        backend:
+          serviceName: breweries-service
+          servicePort: 8072
+      - path: /hotel-breweries/.*
+        backend:
+          serviceName: hotel-breweries-service
+          servicePort: 8074
+          

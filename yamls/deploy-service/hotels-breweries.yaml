@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotel-breweries-deploy
+  labels:
+    app: hotel-breweries-deploy
+spec:
+  selector:
+    matchLabels:
+      app: hotel-breweries-service
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: hotel-breweries-service
+    spec:
+      containers:
+      - image: jmc22071983/hotel-breweries-service-k8s:0.0.1-SNAPSHOT
+        imagePullPolicy: Always
+        name: hotel-breweries-service
+        envFrom:
+        - configMapRef:
+            name: config-map
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotel-breweries-service
+spec:
+  selector:
+    app: hotel-breweries-service
+  ports:
+    - port: 8074
+      targetPort: 8074
+  type: ClusterIP
