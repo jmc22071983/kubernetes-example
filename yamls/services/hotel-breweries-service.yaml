@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hotel-breweries-service
+spec:
+  selector:
+    app: hotel-breweries-service
+  ports:
+    - port: 8074
+      targetPort: 8074
+  type: ClusterIP

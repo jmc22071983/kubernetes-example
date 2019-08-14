@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hotels-service
+  name: hotels-deploy
   labels:
-    app: hotels-service
+    app: hotels-deploy
 spec:
   selector:
     matchLabels:

@@ -1,12 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    app: hotels-service
   name: hotels-service
 spec:
-  type: NodePort
-  ports:
-  - port: 8073
   selector:
     app: hotels-service
+  ports:
+    - port: 8073
+      targetPort: 8073
+  type: ClusterIP
