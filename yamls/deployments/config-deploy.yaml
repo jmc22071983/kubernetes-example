@@ -10,10 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        app: config
+        app: config-service
     spec:
       containers:
-      - name: config
+      - name: config-service
         image: jmc22071983/config-services-k8s:0.0.1-SNAPSHOT
         ports:
         - containerPort: 8888

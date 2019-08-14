@@ -10,5 +10,5 @@ spec:
       paths:
       - path: /config/.*
         backend:
-          serviceName: config
+          serviceName: config-service
           servicePort: 8888
