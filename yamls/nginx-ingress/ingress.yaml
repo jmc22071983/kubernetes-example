@@ -4,6 +4,7 @@ metadata:
   name: app-ingress
   annotations:
     nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
 spec:
   rules:
   - http:
